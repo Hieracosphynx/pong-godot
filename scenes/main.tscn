@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://be8rwf4a82xts"]
+[gd_scene load_steps=8 format=3 uid="uid://be8rwf4a82xts"]
 
 [ext_resource type="PackedScene" uid="uid://dt72o1obq8xgg" path="res://scenes/ball.tscn" id="1_1t1hv"]
 [ext_resource type="Script" path="res://objects/Main.cs" id="1_7532x"]
 [ext_resource type="PackedScene" uid="uid://c22di0cgumj4g" path="res://scenes/court.tscn" id="3_o57xr"]
 [ext_resource type="PackedScene" uid="uid://cadmrh6s33o1x" path="res://scenes/player.tscn" id="4_80n8o"]
+[ext_resource type="PackedScene" uid="uid://u2hgxx0coh52" path="res://scenes/fail_area.tscn" id="5_ypxe2"]
+[ext_resource type="PackedScene" uid="uid://cl38g8amhcv85" path="res://scenes/hud.tscn" id="6_lp4mv"]
+[ext_resource type="PackedScene" uid="uid://car2j10wbk4ei" path="res://scenes/obstacle.tscn" id="7_sgugm"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7532x")
@@ -14,3 +17,30 @@ gravity_scale = 0.0
 [node name="Court" parent="." instance=ExtResource("3_o57xr")]
 
 [node name="Player" parent="." instance=ExtResource("4_80n8o")]
+
+[node name="FailArea" parent="." instance=ExtResource("5_ypxe2")]
+
+[node name="HUD" parent="." instance=ExtResource("6_lp4mv")]
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Obstacle" parent="Obstacles" instance=ExtResource("7_sgugm")]
+position = Vector2(60, 59)
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource("7_sgugm")]
+position = Vector2(376, 88)
+
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource("7_sgugm")]
+position = Vector2(155, 258)
+
+[node name="Obstacle4" parent="Obstacles" instance=ExtResource("7_sgugm")]
+position = Vector2(341, 357)
+
+[node name="Obstacle5" parent="Obstacles" instance=ExtResource("7_sgugm")]
+position = Vector2(388, 247)
+
+[node name="Obstacle6" parent="Obstacles" instance=ExtResource("7_sgugm")]
+position = Vector2(88, 380)
+
+[connection signal="BallHit" from="Ball" to="." method="IncrementScore"]
+[connection signal="BallEntered" from="FailArea" to="." method="GameOver"]

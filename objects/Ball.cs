@@ -3,8 +3,8 @@ using System;
 
 public partial class Ball : RigidBody2D
 {
-	//[Signal]
-	//public delegate void HitEventHandler();
+	[Signal]
+	public delegate void BallHitEventHandler();
 
 	[Export]
 	public Vector2 velocity = new Vector2(250, 250); 
@@ -24,7 +24,14 @@ public partial class Ball : RigidBody2D
 
 		if (collisionInfo != null)
 		{
+			var collider = collisionInfo.GetCollider();
+
 			velocity = velocity.Bounce(collisionInfo.GetNormal());
+
+			if(collider.GetType() == typeof(Player))
+			{
+				EmitSignal(SignalName.BallHit);
+			}
 		}
     }
 }
