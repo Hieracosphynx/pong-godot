@@ -1,19 +1,19 @@
 [gd_scene load_steps=2 format=3 uid="uid://c22di0cgumj4g"]
 
-[ext_resource type="PackedScene" uid="uid://cb0p8nhh70cd5" path="res://ground.tscn" id="1_vejb1"]
+[ext_resource type="PackedScene" uid="uid://cb0p8nhh70cd5" path="res://scenes/ground.tscn" id="1_vejb1"]
 
 [node name="Court" type="Node2D"]
+position = Vector2(0, -110)
+metadata/_edit_group_ = true
 
 [node name="Ground" parent="." instance=ExtResource("1_vejb1")]
 position = Vector2(13, 309)
-rotation = -1.5708
-
-[node name="Ground2" parent="." instance=ExtResource("1_vejb1")]
-position = Vector2(211, 488)
+rotation = 1.5708
 
 [node name="Ground3" parent="." instance=ExtResource("1_vejb1")]
-position = Vector2(487, 310)
+position = Vector2(492, 423)
 rotation = -1.5708
 
 [node name="Ground4" parent="." instance=ExtResource("1_vejb1")]
-position = Vector2(211, 12)
+position = Vector2(309, 115)
+rotation = 3.14159

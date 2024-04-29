@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cadmrh6s33o1x"]
+
+[ext_resource type="Script" path="res://objects/Player.cs" id="1_3gnad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n73h6"]
+size = Vector2(94.5, 3.5)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(234, 490)
+script = ExtResource("1_3gnad")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(29.25, -1.75)
+shape = SubResource("RectangleShape2D_n73h6")
+
+[node name="Paddle" type="Line2D" parent="."]
+position = Vector2(-99.6182, -205.113)
+scale = Vector2(0.654545, 0.425455)
+points = PackedVector2Array(124, 478, 195.547, 478, 269, 478)
