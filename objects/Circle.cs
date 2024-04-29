@@ -4,8 +4,8 @@ public partial class Circle : Node2D
 {
     public override void _Draw()
     {
-		  Color white = Colors.White;
+		  Color red = Colors.Red;
 		
-		  DrawCircle(Vector2.Zero, 9.8723f, white);
+		  DrawCircle(Vector2.Zero, 9.8723f, red);
     }
 }
