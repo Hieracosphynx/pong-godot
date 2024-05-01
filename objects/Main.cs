@@ -10,11 +10,6 @@ public partial class Main : Node
 		GetNode<HUD>("HUD").UpdateMessage(Score.ToString());
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
 	public void IncrementScore()
 	{
 		Score++;
@@ -25,8 +20,8 @@ public partial class Main : Node
 	{
 		GetNode<HUD>("HUD").UpdateMessage("Game Over!");
 
-		await ToSignal(GetTree().CreateTimer(5.0), SceneTreeTimer.SignalName.Timeout);
+		await ToSignal(GetTree().CreateTimer(2.0), SceneTreeTimer.SignalName.Timeout);
 
-		Score = 0;
+		GetTree().ReloadCurrentScene();
 	}
 }

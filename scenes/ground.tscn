@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cb0p8nhh70cd5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dp11"]
-size = Vector2(487, 20)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d57bl"]
+distance = 9.0
 
 [node name="StaticBody2D" type="StaticBody2D"]
 position = Vector2(192, 453)
@@ -13,4 +13,4 @@ points = PackedVector2Array(41.0372, -2, 47.0551, -2, 63.5427, -2, 99.6477, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(57, 3)
-shape = SubResource("RectangleShape2D_6dp11")
+shape = SubResource("WorldBoundaryShape2D_d57bl")
